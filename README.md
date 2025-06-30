@@ -241,17 +241,17 @@ O candidato deve implementar uma aplicação completa de gerenciamento de tarefa
 ## Critérios de Avaliação
 
 ### Obrigatórios
-- [ ] CRUD completo de tarefas funcionando
-- [ ] Interface baseada no design fornecido
-- [ ] Sistema de filas implementado
-- [ ] Cache implementado com invalidação
-- [ ] Soft deletes funcionando
-- [ ] Código limpo e bem estruturado
+- [x] CRUD completo de tarefas funcionando
+- [x] Interface baseada no design fornecido
+- [x] Sistema de filas implementado
+- [x] Cache implementado com invalidação
+- [x] Soft deletes funcionando
+- [x] Código limpo e bem estruturado
 
 ### Diferenciais
-- [ ] Testes unitários/feature
+- [x] Testes unitários/feature
 - [ ] Tratamento de erros robusto
-- [ ] Validações frontend e backend
+- [x] Validações frontend e backend -- somente validação no banckend
 - [ ] Responsividade da interface
 - [ ] Documentação de código
 - [ ] Otimizações de performance
@@ -288,12 +288,9 @@ O candidato deve implementar uma aplicação completa de gerenciamento de tarefa
 5. **Implemente loading states** para melhor UX
 6. **Trate erros** de forma amigável ao usuário
 
-## Contato
+## Melhorias 
 
-Para dúvidas sobre o teste, entre em contato com a equipe de desenvolvimento da Alloy.
-
----
-
-**Boa sorte! 🚀**
+1. Melhora o front dento um intendimento melhor das classes já disposta
+2. validações no front
 
 
