@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Tasks\StoreTasksRequest;
 use App\Http\Requests\Tasks\UpdateTasksRequest;
+use App\Jobs\DeleteCompletedTask;
 use App\Models\Task;
 use Exception;
 use Illuminate\Http\Request;
@@ -101,7 +102,11 @@ class TaskController extends Controller
             $task->delete();
             Cache::forget('task.'.$id);
             Cache::forget('tasks.all');
+            // if ($task->finalizado) {
+                DeleteCompletedTask::dispatch($task);
+            // }
             return $this->ApiSuccess('Tarefa excluída com sucesso');
+
         } catch (Exception $e) {
             return $this->ApiError('Falha ao excluir tarefa', $e->getMessage());
         }
@@ -115,6 +120,7 @@ class TaskController extends Controller
             $task->save();
             Cache::forget('task.'.$task->id);
             Cache::forget('tasks.all');
+
             return $this->ApiSuccess('Tarefa atualizada com sucesso', $task);
         } catch (Exception $e) {
             return $this->ApiError('Falha ao atualizar tarefa', $e->getMessage());
